@@ -43,7 +43,7 @@ done
 
 [ -z ${service} ] && service=network-hook-svc
 [ -z ${secret} ] && secret=network-hook-certs
-[ -z ${namespace} ] && namespace=default
+[ -z ${namespace} ] && namespace=hypernet-local-agent-system
 
 if [ ! -x "$(command -v openssl)" ]; then
     echo "openssl not found"
@@ -133,6 +133,6 @@ else
     kubectl -n ${namespace} apply -f -
 fi
 
-# patch webhook.yaml
+# patch network-hook.yaml
 ca=$(kubectl config view --raw --minify --flatten -o jsonpath='{.clusters[].cluster.certificate-authority-data}')
-sed -i "/caBundle/c\    caBundle: $ca" webhook.yaml
+sed -i "/caBundle/c\    caBundle: $ca" network-hook.yaml
