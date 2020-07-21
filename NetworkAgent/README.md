@@ -36,7 +36,7 @@
 
 2. 위의 과정에서 생성한 tar 파일들을 폐쇄망 환경으로 이동시킨 뒤 사용하려는 registry에 이미지를 push한다.
     ```bash
-    $ sudo docker load < tmaxcloudck/hypernet-local-agent_${HYPERNET_LOCAL_AGENT_VERSION}.tar
+    $ sudo docker load < hypernet-local-agent_${HYPERNET_LOCAL_AGENT_VERSION}.tar
     $ sudo docker tag tmaxcloudck/hypernet-local-agent:${HYPERNET_LOCAL_AGENT_VERSION} ${REGISTRY}/tmaxcloudck/hypernet-local-agent:${HYPERNET_LOCAL_AGENT_VERSION}   
     $ sudo docker push ${REGISTRY}/tmaxcloudck/hypernet-local-agent:${HYPERNET_LOCAL_AGENT_VERSION}  
     ```
